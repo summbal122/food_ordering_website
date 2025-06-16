@@ -4,8 +4,8 @@ import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 import LOGO_IMAGE from "../../images/app_logo.png";
 import { Link as ScrollLink }  from "react-scroll";
-// import UserContext from "../utils/UserContext";
-const Header = () => {
+
+const Header = ({showMenu}) => {
   const [btnName, setBtnName] = useState("login");
   const { loggedInUser } = useContext(UserContext);
   
@@ -25,25 +25,21 @@ const Header = () => {
                 <li className="cursor-pointer hover:font-semibold" >
                   <RouterLink to="/"> Home</RouterLink>
                  </li>
-                 <li className="cursor-pointer hover:font-semibold"
-                 > <ScrollLink
+               {showMenu && (
+              <li className="cursor-pointer hover:font-semibold"> 
+                <ScrollLink
                   to="menu"
                   smooth={true}
                   duration={600}
                   className="cursor-pointer"
                 >
                   Menu
-                </ScrollLink></li>
+                </ScrollLink>
+              </li>
+            )}
                 <li
                 className="cursor-pointer hover:font-semibold">
-                <ScrollLink
-                  to="about"
-                  smooth={true}
-                  duration={600}
-                  className="cursor-pointer"
-                >
-                  About
-                </ScrollLink></li>
+                <RouterLink to="/about"> About</RouterLink></li>
                 <li className="cursor-pointer hover:font-semibold"> 
                 <RouterLink  to="/Contact">Contact us</RouterLink > 
                 </li>

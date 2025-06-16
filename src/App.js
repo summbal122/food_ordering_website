@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import Cart from "./Components/Cart";
 import Main from "./Components/Main";
 import Footer from "./Components/Footer";
+import About from "./Components/About";
 // import Grocery from "./Components/Grocery";
 // import grocery from lazy loading
 
@@ -20,66 +21,88 @@ import Footer from "./Components/Footer";
 const Grocery = lazy(() => import("./Components/Main"));
 
 const AppLayout = () => {
-    const [userName, setUserName] = useState();
-//authentication code
-    useEffect(() =>{
-        const data = {
-            name: "username"
-        };
-        setUserName(data.name);
-    }, [])
+  const [userName, setUserName] = useState();
 
-    return( 
-        <Provider store ={appStore}>
-            <UserContext.Provider value={{ loggedInUser: userName , setUserName}}>
-            <div className="min-h-screen">
-        <Header  /> 
-         <Outlet/>
-         <Footer/>
-         </div>
-         </UserContext.Provider>
-          </Provider>
-        
-        
-   
-    )};
+  useEffect(() => {
+    const data = {
+      name: "username"
+    };
+    setUserName(data.name);
+  }, []);
+
+  return (
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="min-h-screen">
+          <Outlet />
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </Provider>
+  );
+};
 const appRouter = createBrowserRouter([
-    {
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
         path: "/",
-        element: <AppLayout/>,
-        children:[
-           {
-            path: "/",
-            element: (
-                <>
-                <Main />
-                <Body />
-                </>
-            )
-            },
-            {
-                path: "/Contact",
-                element: <Contact />
-            },
-            {
-                path: "/restaurants/:resId",
-                element: <RestaurantMenu />
-            },
-            
-            {
-            path: "/Cart",
-            element: <Cart />
-         }, 
-         {
-            path: "/Footer",
-            element: <Footer/>
-         }
+        element: (
+          <>
+            <Header showMenu={true} />
+            <Main />
+            <Body />
+          </>
+        ),
+      },
+      {
+        path: "/Contact",
+        element: (
+          <>
+            <Header showMenu={false} />
+            <Contact />
+          </>
+        ),
+      },
+      {
+        path: "/restaurants/:resId",
+        element: (
+          <>
+            <Header showMenu={true} />
+            <RestaurantMenu />
+          </>
+        ),
+      },
+      {
+        path: "/Cart",
+        element: (
+          <>
+            <Header showMenu={true} />
+            <Cart />
+          </>
+        ),
+      },
+      { path: "/about",
+        element:  <>
+            <Header showMenu={false} />
+            <About />
+          </>
+      },
+      {
+        path: "/Footer",
+        element: (
+          <>
+            <Header showMenu={true} />
+            <Footer />
+          </>
+        ),
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
 
-        ],
-        errorElement: <Error/>
-
-    }
-])
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
 
