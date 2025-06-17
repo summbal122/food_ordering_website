@@ -7,34 +7,34 @@ const Footer = () => {
       <footer className="bg-black  text-gray-400 text-sm w-full ">
   <div className="w-3/4 flex justify-between mx-auto py-15">
     <div >
-      <ul className="space-y-3">
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy</a></li>
+      <ul className="space-y-3 ">
+        <li className='hover:font-semibold'><a href="#">FAQ</a></li>
+        <li className='hover:font-semibold'><a href="#">Help Center</a></li>
+        <li className='hover:font-semibold'><a href="#">Terms of Use</a></li>
+        <li className='hover:font-semibold'><a href="#">Privacy</a></li>
       </ul>
     </div>
     <div>
       <ul className="space-y-3">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Press</a></li>
-        <li><a href="#">Investors</a></li>
+        <li className='hover:font-semibold'><a href="#">About</a></li>
+        <li className='hover:font-semibold'><a href="#">Careers</a></li>
+        <li className='hover:font-semibold'><a href="#">Press</a></li>
+        <li className='hover:font-semibold'><a href="#">Investors</a></li>
       </ul>
     </div>
     <div>
       <ul className="space-y-3">
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Affiliate</a></li>
-        <li><a href="#">Cookies</a></li>
+        <li className='hover:font-semibold'><a href="#">Contact Us</a></li>
+        <li className='hover:font-semibold'><a href="#">Affiliate</a></li>
+        <li className='hover:font-semibold'><a href="#">Cookies</a></li>
       </ul>
     </div>
     <div>
       <ul className="space-y-3">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">YouTube</a></li>
+        <li className='hover:font-semibold'><a href="#">Facebook</a></li>
+        <li className='hover:font-semibold'><a href="#">Twitter</a></li>
+        <li className='hover:font-semibold'><a href="#">Instagram</a></li>
+        <li className='hover:font-semibold'><a href="#">YouTube</a></li>
       </ul>
     </div>
   </div>

@@ -19,4 +19,4 @@ industry standard, write in script use npm run start
 #A7C1A8
 #D1D8BE
 #EEEFE0npx
--  @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch

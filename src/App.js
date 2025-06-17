@@ -13,6 +13,8 @@ import Cart from "./Components/Cart";
 import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
+import Login from "./Components/Login";
+
 // import Grocery from "./Components/Grocery";
 // import grocery from lazy loading
 
@@ -88,6 +90,11 @@ const appRouter = createBrowserRouter([
             <Header showMenu={false} />
             <About />
           </>
+      },
+      {
+        path: "/login",
+        element: <Login/>
+
       },
       {
         path: "/Footer",

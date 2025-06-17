@@ -50,13 +50,8 @@ const Header = ({showMenu}) => {
                     <ScrollLink to="/Cart">- {cartLength.length} </ScrollLink> 
                    </i>
       
-                <button  className="cursor-pointer hover:font-semibold"
-                 onClick={ ()=>{ 
-                    btnName === "login"
-                    ? setBtnName("Logout")
-                    : setBtnName ('Login')   
-                }
-                }>{btnName}
+                <button  className="cursor-pointer hover:font-semibold">
+                  <RouterLink to="/login">Login</RouterLink>
                 </button>
                 <a data-testid="headerInput" className="">{loggedInUser}</a>
                 </div>
