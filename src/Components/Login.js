@@ -8,6 +8,7 @@ import { useRef } from "react";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { Link } from "react-router";
+
 // ✅ import initialized app
 
 const Login = () => {
@@ -67,11 +68,15 @@ const handleSignUp = (e) => {
   return (
     <div className="h-screen flex flex-col md:flex-row overflow-hidden">
       <div className="flex-1 flex flex-col justify-center items-center px-6 md:px-16 relative z-10 bg-white">
-        <img
+       <div>
+         <img
           className="w-24 absolute top-4 left-6 md:left-10"
           src={IMG}
           alt="Food app logo"
         />
+        <h1 className=" flex mx-auto"> <Link to="/">Home</Link></h1>
+       </div>
+      
 
         <main className="w-full  max-w-md text-center flex flex-col items-center gap-6">
           <div className="w-full bg-white rounded-sm shadow-xs">
