@@ -19,7 +19,7 @@ import { URL } from "../utils/constant";
         </h1>
           <div className="flex items-center gap-1">
            <span className="text-red-500 text-[10px] font-bold">{avgRating}</span>
-           <span className="text-black text-[8px]">stars</span></div>
+           <span className="text-gray-500 text-xs">★</span></div>
         </div>
 
         </div>
