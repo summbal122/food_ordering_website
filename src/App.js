@@ -23,6 +23,7 @@ import Login from "./Components/Login";
 const Grocery = lazy(() => import("./Components/Main"));
 
 const AppLayout = () => {
+  const [showCart, setShowCart] = useState(false);
   const [userName, setUserName] = useState();
 
   useEffect(() => {
@@ -36,7 +37,8 @@ const AppLayout = () => {
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="min-h-screen">
-          <Outlet />
+            <Outlet context={{ showCart, setShowCart }} />
+          {showCart && <Cart />} {/*  Show cart globally */}
           <Footer />
         </div>
       </UserContext.Provider>
@@ -68,20 +70,11 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: "/restaurants/:resId",
+        path:"/restaurant/:resId",
         element: (
           <>
             <Header showMenu={true} />
             <RestaurantMenu />
-          </>
-        ),
-      },
-      {
-        path: "/Cart",
-        element: (
-          <>
-            <Header showMenu={true} />
-            <Cart />
           </>
         ),
       },

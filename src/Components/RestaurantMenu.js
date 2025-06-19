@@ -1,29 +1,40 @@
-import { Shimmer } from "./Shimmer";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { useState } from "react";
+import { Shimmer } from "./Shimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const resInfo = useRestaurantMenu(resId);
+  useRestaurantMenu(resId); 
+
+  const menuData = useSelector((store) => store.restaurantMenu.menu);
   const [showIndex, setShowIndex] = useState(null);
 
-  if (resInfo === null) return <Shimmer />;
+ 
+  if (!menuData || Object.keys(menuData).length === 0) return <Shimmer />;
 
-  const { name, cuisines, avgRating, costForTwoMessage } =
-    resInfo?.cards?.[2]?.card?.card?.info;
+  const info = menuData?.cards?.find(
+    (card) => card.card?.card?.info
+  )?.card?.card?.info;
 
-  const categories = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-    (c) =>
-      c.card?.card?.["@type"] ===
-      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-  );
+  if (!info) return <Shimmer />;
+
+  const { name, cuisines, avgRating, costForTwoMessage } = info;
+
+  const categories =
+    menuData?.cards
+      ?.find((card) => card.groupedCard)
+      ?.groupedCard?.cardGroupMap?.REGULAR?.cards?.filter(
+        (c) =>
+          c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      ) || [];
 
   return (
     <div className="flex bg-secondary flex-col items-center py-10 px-4 min-h-screen">
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-6 space-y-4">
-       
         <div className="text-center border-b pb-4">
           <h1 className="text-3xl font-bold text-gray-800">{name}</h1>
           <p className="text-gray-500">{cuisines?.join(", ")}</p>
@@ -35,17 +46,17 @@ const RestaurantMenu = () => {
           </div>
         </div>
 
-
+        {/* Categories Accordion */}
         <div className="space-y-3">
           {categories.map((category, index) => (
-          <RestaurantCategory
-            data={category?.card?.card}
-            key={category?.card?.card?.title || index}
-            showItems={index === showIndex}
-            setShowIndex={() =>
-              setShowIndex(index === showIndex ? null : index)
-  }
-/>
+            <RestaurantCategory
+              key={category?.card?.card?.title || index}
+              data={category?.card?.card}
+              showItems={index === showIndex}
+              setShowIndex={() =>
+                setShowIndex(index === showIndex ? null : index)
+              }
+            />
           ))}
         </div>
       </div>

@@ -4,19 +4,21 @@ import { useSelector } from "react-redux";
 import LOGO_IMAGE from "../../images/app_logo.png";
 import { Link as ScrollLink } from "react-scroll";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { useOutletContext } from "react-router"; 
 
 const Header = ({ showMenu }) => {
+  const { showCart, setShowCart } = useOutletContext();
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const auth = getAuth();
   const cartItems = useSelector((store) => store.cart.items);
 
-  // Check auth state on mount
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-    return () => unsubscribe(); // Cleanup
+    return () => unsubscribe(); 
   }, [auth]);
 
   const handleLogout = () => {
@@ -65,8 +67,10 @@ const Header = ({ showMenu }) => {
         </ul>
 
         <div className="flex gap-6 items-center text-sm cursor-pointer">
-          <i className="fa-solid fa-cart-shopping">
-            <RouterLink to="/cart"> - {cartItems.length}</RouterLink>
+          <i
+           onClick={() => setShowCart(!showCart)}
+           className="fa-solid fa-cart-shopping">
+            <span> - {cartItems.length}</span>
           </i>
 
           {user ? (

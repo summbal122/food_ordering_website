@@ -2,7 +2,7 @@ import User from "./User";
 const About = ()=>{
   return(
     <div> 
-      {/* <User /> */}
+     
 <section class="bg-white text-gray-800 px-6 py-16 max-w-6xl mx-auto">
  
   <div class="mb-16 text-center">
