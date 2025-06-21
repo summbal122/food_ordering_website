@@ -1,4 +1,4 @@
-import React, {lazy , Suspense, useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -15,30 +15,18 @@ import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Login from "./Components/Login";
 
-// import Grocery from "./Components/Grocery";
-// import grocery from lazy loading
-
-//card.card.gridElements.infoWithStyle.restaurants.info.name
-
-const Grocery = lazy(() => import("./Components/Main"));
-
 const AppLayout = () => {
   const [showCart, setShowCart] = useState(false);
   const [userName, setUserName] = useState();
 
-  useEffect(() => {
-    const data = {
-      name: "username"
-    };
-    setUserName(data.name);
-  }, []);
+
 
   return (
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
         <div className="min-h-screen">
             <Outlet context={{ showCart, setShowCart }} />
-          {showCart && <Cart />} {/*  Show cart globally */}
+          {showCart && <Cart />}
           <Footer />
         </div>
       </UserContext.Provider>

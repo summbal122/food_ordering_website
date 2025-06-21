@@ -1,58 +1,104 @@
-import { removeItem, clearCart } from "../utils/cartSlice";
+import { removeItem, clearCart, addItem } from "../utils/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { URL } from "../utils/constant";
 
 const Cart = () => {
-  const cartItems = useSelector((store) => store.cart.items);
+     const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
 
-  const handleClearItems = () => {
-    dispatch(clearCart());
+   const handleClearItems = () => {
+     dispatch(clearCart());
   };
 
-  const handleRemoveItem = (itemId) => {
+   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
 
-  return (
-    <div className="shadow-md absolute w-sm min-h-[450px] top-0 right-0 bg-gray-100 flex justify-center rounded-md">
-      <div className="w-full p-5 text-center flex flex-col items-center border border-gray-200">
-        <h1 className="text-xl font-semibold mb-4">Cart</h1> 
-         <p
-              className=" text-red-400 text-sm "
-              onClick={handleClearItems}
-            >
-              Clear Cart
-            </p>
-            
+  const handleIncrease = (item) => {
+    dispatch(addItem(item));
+  };
 
+      const totalAmount = cartItems.reduce((total, item) => {
+        if (typeof item.price === "number") {
+          return total + (item.price * item.quantity) / 100;
+        }
+        return total;
+      }, 0);
+
+
+  return (
+    <div className="shadow-lg absolute w-[430px] h-[550px] top-0 right-0 bg-white rounded-xl z-50 border border-gray-200">
+      <div className="w-full h-full flex flex-col justify-between p-6">
+   
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl font-bold text-gray-800">Your Cart</h1>
+          <button
+            className="text-red-500 text-sm underline hover:text-red-700"
+            onClick={handleClearItems}
+          >
+            Clear All
+          </button>
+        </div>
+
+     
         {cartItems.length === 0 ? (
-          <p className="absolute top-6/12">Your cart is empty.</p>
+          <div className="flex-1 flex items-center justify-center text-gray-400">
+            Your cart is empty.
+          </div>
         ) : (
           <>
-            {cartItems.map((item) => (
-              <div key={item.id} className="flex justify-between text-sm w-full space-y-2 items-center">
-                <div className="flex items-center gap-2">
-                <img 
-                className="w-10 rounded-full"
-                src={URL + item.imageId} />
-                <p>{item.name}</p>
-                </div>
-               
-                <button
-                  className="text-red-500 text-sm"
-                  onClick={() => handleRemoveItem(item.id)}
+            <div className="flex-1 overflow-y-auto space-y-4 pr-2">
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex justify-between items-center border-b border-gray-300 pb-2 gap-4"
                 >
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              
+                  <div className="flex items-center gap-3">
+                    <img
+                      className="w-12 h-12 rounded-md object-cover"
+                      src={URL + item.imageId}
+                      alt={item.name}
+                    />
+                    <div className="text-left">
+                      <p className="text-sm font-medium text-gray-800">{item.name}</p>
+                    <p className="text-xs text-gray-500">
+                      {typeof item.price === "number"
+                      ? `$${(item.price / 100).toFixed(2)} × ${item.quantity} = $${((item.price * item.quantity) / 100).toFixed(2)}`
+                      : "Item not available"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <button
+                      onClick={() => handleRemoveItem(item.id)}
+                      className="px-2 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded"
+                    >
+                      -
+                    </button>
+                    <span className="text-sm font-semibold">{item.quantity}</span>
+                    <button
+                      onClick={() => handleIncrease(item)}
+                      className="px-2 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
 
+          
+            <div className="border-t pt-4 mt-4">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-lg font-semibold text-gray-800">Total:</span>
+                <span className="text-lg font-bold text-green-600">
+                  ${totalAmount.toFixed(2)}
+                </span>
               </div>
-            ))}
-            <button className=" absolute bottom-6 bg-black text-sm text-white py-3 px-5 rounded-md ">
-              Checkout
-            </button>
-            
+              <button className="w-full bg-black text-white text-sm py-3 rounded-md hover:bg-gray-800 transition">
+                Proceed to Checkout
+              </button>
+            </div>
           </>
         )}
       </div>
