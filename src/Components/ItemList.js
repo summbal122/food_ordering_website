@@ -23,7 +23,7 @@ const ItemList = ({ items }) => {
           <div
             data-testid="foodItems"
             key={info.id || index}
-            className="flex items-center gap-4 p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white"
+            className="grid gap-4 p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white"
           >
             <div className="relative min-w-[96px] h-24 rounded overflow-hidden">
               <img

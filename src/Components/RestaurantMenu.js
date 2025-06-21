@@ -33,20 +33,15 @@ const RestaurantMenu = () => {
       ) || [];
 
   return (
-    <div className="flex bg-secondary flex-col items-center py-10 px-4 min-h-screen">
-      <div className="w-full max-w-3xl bg-white rounded-2xl shadow-lg p-6 space-y-4">
-        <div className="text-center border-b pb-4">
+    <div className="w-full bg-secondary py-10 flex justify-center px-4 min-h-screen">
+      <div className="grid w-11/12 bg-white rounded-2xl shadow-lg p-6 space-y-4">
+        <div className="text-center  border-b pb-4">
           <h1 className="text-3xl font-bold text-gray-800">{name}</h1>
           <p className="text-gray-500">{cuisines?.join(", ")}</p>
           <div className="flex justify-center items-center gap-4 mt-2">
-            <span className="bg-green-100 text-green-700 px-2 py-1 rounded text-sm font-medium">
-              ⭐ {avgRating}
-            </span>
-            <span className="text-gray-600 text-sm">{costForTwoMessage}</span>
           </div>
         </div>
 
-        {/* Categories Accordion */}
         <div className="space-y-3">
           {categories.map((category, index) => (
             <RestaurantCategory

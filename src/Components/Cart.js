@@ -1,35 +1,31 @@
 import { removeItem, clearCart, addItem } from "../utils/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { URL } from "../utils/constant";
+import { Link } from "react-router";
+import { calculateTotalAmount } from "../utils/totalAmount";
+
 
 const Cart = () => {
-     const cartItems = useSelector((store) => store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
 
-   const handleClearItems = () => {
-     dispatch(clearCart());
+  const handleClearItems = () => {
+    dispatch(clearCart());
   };
 
-   const handleRemoveItem = (itemId) => {
+  const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
 
   const handleIncrease = (item) => {
     dispatch(addItem(item));
   };
-
-      const totalAmount = cartItems.reduce((total, item) => {
-        if (typeof item.price === "number") {
-          return total + (item.price * item.quantity) / 100;
-        }
-        return total;
-      }, 0);
-
+const totalAmount = calculateTotalAmount(cartItems);
 
   return (
     <div className="shadow-lg absolute w-[430px] h-[550px] top-0 right-0 bg-white rounded-xl z-50 border border-gray-200">
       <div className="w-full h-full flex flex-col justify-between p-6">
-   
+
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-2xl font-bold text-gray-800">Your Cart</h1>
           <button
@@ -40,7 +36,6 @@ const Cart = () => {
           </button>
         </div>
 
-     
         {cartItems.length === 0 ? (
           <div className="flex-1 flex items-center justify-center text-gray-400">
             Your cart is empty.
@@ -61,10 +56,10 @@ const Cart = () => {
                     />
                     <div className="text-left">
                       <p className="text-sm font-medium text-gray-800">{item.name}</p>
-                    <p className="text-xs text-gray-500">
-                      {typeof item.price === "number"
-                      ? `$${(item.price / 100).toFixed(2)} × ${item.quantity} = $${((item.price * item.quantity) / 100).toFixed(2)}`
-                      : "Item not available"}
+                      <p className="text-xs text-gray-500">
+                        {typeof item.price === "number"
+                          ? `$${(item.price / 100).toFixed(2)} × ${item.quantity} = $${((item.price * item.quantity) / 100).toFixed(2)}`
+                          : "Item not available"}
                       </p>
                     </div>
                   </div>
@@ -87,7 +82,6 @@ const Cart = () => {
               ))}
             </div>
 
-          
             <div className="border-t pt-4 mt-4">
               <div className="flex justify-between items-center mb-4">
                 <span className="text-lg font-semibold text-gray-800">Total:</span>
@@ -95,9 +89,11 @@ const Cart = () => {
                   ${totalAmount.toFixed(2)}
                 </span>
               </div>
-              <button className="w-full bg-black text-white text-sm py-3 rounded-md hover:bg-gray-800 transition">
-                Proceed to Checkout
-              </button>
+              <Link to="/checkout">
+                <button className="w-full bg-black text-white text-sm py-3 rounded-md hover:bg-gray-800 transition">
+                  Proceed to Checkout
+                </button>
+              </Link>
             </div>
           </>
         )}

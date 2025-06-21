@@ -4,20 +4,20 @@ import IMG_THREE from "../../images/food2.jpg";
 
 const Main = () => {
   return (
-    <section className="bg-secondary lg:py-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="bg-secondary p-5 py-16 lg:py-10 lg:px-15">
+      <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="text-center lg:text-left space-y-6">
-          <h1 className="text-4xl lg:text-5xl font-bold text-dark-background leading-tight">
+          <h1 className="text-3xl lg:text-5xl font-bold text-dark-background leading-tight">
             Fresh, Fast & Delicious Meals
           </h1>
-          <p className="text-gray-700 text-base lg:text-lg">
+          <p className="text-gray-700 text-sm lg:text-lg">
             Experience the joy of healthy, chef-made food delivered straight to your door. Taste the freshness in every bite!
           </p>
           <div className="flex justify-center lg:justify-start gap-4">
-            <button className="bg-dark-background text-light-background font-semibold px-8 py-3 rounded hover:opacity-90 transition">
+            <button className="bg-dark-background text-light-background font-semibold p-3 lg:px-8 lg:py-3 rounded hover:opacity-90 transition">
               View Menu
             </button>
-            <button className="border border-dark-background text-dark-background font-semibold px-8 py-3 rounded hover:bg-dark-background hover:text-white transition">
+            <button className="border border-dark-background text-dark-background p-3 font-semibold lg:px-8 lg:py-3 rounded hover:bg-dark-background hover:text-white transition">
               Visit Blog
             </button>
           </div>
