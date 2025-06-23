@@ -14,21 +14,21 @@ const Contact = () => {
         Team will get back to you within 24 hours
       </p>
       <p className="text-xs lg:text-lg 2xl:text-2xl text-gray-700">
-        <strong>Service Hours:</strong> Mon–Sun | 9:00 AM – 11:00 PM
+        <strong className="text-dark-background">Service Hours:</strong> Mon–Sun | 9:00 AM – 11:00 PM
       </p>
     </div>
 
     <div className="space-y-4 md:space-y-8 2xl:space-y-10 mt-4">
       <div className="flex items-center gap-4 2xl:gap-8 hover:bg-gray-100 transition rounded-md">
-        <i className="fa-solid fa-phone text-sm sm:text-base 2xl:text-3xl text-secondary"></i>
+        <i className="fa-solid fa-phone text-sm sm:text-base 2xl:text-3xl text-dark-background"></i>
         <p className="text-xs md:text-md lg:text-lg 2xl:text-2xl text-gray-800">+1 (555) 123-4567</p>
       </div>
       <div className="flex items-center gap-4 2xl:gap-8 hover:bg-gray-100 transition rounded-md ">
-        <i className="fa-solid fa-envelope text-sm sm:text-base 2xl:text-3xl text-secondary"></i>
+        <i className="fa-solid fa-envelope text-sm sm:text-base 2xl:text-3xl text-dark-background"></i>
         <p className="text-xs md:text-md lg:text-lg 2xl:text-2xl text-gray-800">example@example.com</p>
       </div>
       <div className="flex items-center gap-4 2xl:gap-8 hover:bg-gray-100 transition rounded-md ">
-        <i className="fa-solid fa-location-dot text-sm sm:text-base 2xl:text-3xl text-secondary"></i>
+        <i className="fa-solid fa-location-dot text-sm sm:text-base 2xl:text-3xl text-dark-background"></i>
         <p className="text-xs md:text-md lg:text-lg 2xl:text-2xl text-gray-800">
           123 Example Street, Springfield, IL 62704, USA
         </p>
@@ -36,9 +36,9 @@ const Contact = () => {
     </div>
 
     <div className="flex gap-4 lg:gap-8 2xl:gap-12 pt-6">
-      <i className="fa-brands fa-facebook text-base lg:text-2xl 2xl:text-4xl text-gray-600 hover:text-secondary cursor-pointer"></i>
-      <i className="fa-brands fa-square-instagram text-base lg:text-2xl 2xl:text-4xl text-gray-600 hover:text-secondary cursor-pointer"></i>
-      <i className="fa-brands fa-square-twitter text-base lg:text-2xl 2xl:text-4xl text-gray-600 hover:text-secondary cursor-pointer"></i>
+      <i className="fa-brands fa-facebook text-base lg:text-2xl 2xl:text-4xl text-dark-background hover:text-secondary cursor-pointer"></i>
+      <i className="fa-brands fa-square-instagram text-base lg:text-2xl 2xl:text-4xl text-dark-background hover:text-secondary cursor-pointer"></i>
+      <i className="fa-brands fa-square-twitter text-base lg:text-2xl 2xl:text-4xl text-dark-background hover:text-secondary cursor-pointer"></i>
     </div>
   </div>
 

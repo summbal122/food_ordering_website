@@ -17,7 +17,7 @@ const RestaurantCard = ({ resData }) => {
         <div className="border-b space-y-2 border-b-gray-200">
         <div className="flex h-36 md:h-56 p-2 w-full justify-center border border-light-background overflow-hidden">
           <img
-            className="w-full h-full object-cover md:rounded-md"
+            className="w-full object-fill md:rounded-md"
             src={URL + cloudinaryImageId}
             alt={name}
           />
@@ -25,9 +25,9 @@ const RestaurantCard = ({ resData }) => {
 
           <div className="px-3 pb-2 flex items-center justify-between">
             <h1 className="font-bold text-[6px] md:text-xs 2xl:text-sm">{name}</h1>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <span className="text-red-500 text-[4px] md:text-[10px] 2xl:text-sm font-bold">{avgRating}</span>
-              <span className="text-gray-500 text-[4px] md:text-xs 2xl:text-sm">★</span>
+              <span className="text-primary-darker text-[4px] md:text-xs 2xl:text-sm">★</span>
             </div>
           </div>
         </div>

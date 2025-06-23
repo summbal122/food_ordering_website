@@ -6,10 +6,10 @@ import { Link as ScrollLink } from "react-scroll";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useOutletContext } from "react-router";
 
-const Header = ({ showMenu }) => {
+const Header = ({ showMenu, showAbout }) => {
+  const navigate = useNavigate();
   const { showCart, setShowCart } = useOutletContext();
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();
   const auth = getAuth();
   const cartItems = useSelector((store) => store.cart.items);
 
@@ -48,9 +48,13 @@ const Header = ({ showMenu }) => {
               </ScrollLink>
             </li>
           )}
-          <li className="cursor-pointer hover:font-semibold">
-            <RouterLink to="/about">About</RouterLink>
-          </li>
+          {showAbout && ( <li className="cursor-pointer hover:font-semibold">
+            <ScrollLink to="about" smooth={true} duration={600}>
+                About
+              </ScrollLink>
+          </li>)
+          }
+         
           <li className="cursor-pointer hover:font-semibold">
             <RouterLink to="/contact">Contact</RouterLink>
           </li>

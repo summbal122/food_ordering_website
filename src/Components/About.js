@@ -1,79 +1,91 @@
-
+import IMG_ONE from "../../images/food-order.jpg";
+import IMG_TWO from "../../images/food-preparing.jpg";
+import IMG_THREE from "../../images/food-delivered.jpg";
 const About = ()=>{
   return(
-    <div> 
-     
-<section class="bg-white text-gray-800 px-6 py-16 max-w-6xl mx-auto">
- 
-  <div class="mb-16 text-center">
-    <h2 class="text-4xl font-bold mb-4">Our Story</h2>
-    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
-      What started as a simple idea turned into a tasty mission — to connect people with their favorite restaurants in the easiest way possible.
-      Inspired by apps like Foodpanda, our platform brings multiple restaurants to your fingertips, helping you discover and order meals effortlessly.
-    </p>
-    <p class="mt-4">
-      Whether you're in the mood for spicy desi dishes, cheesy pizzas, or healthy salads, we’ve got something for every craving.
-    </p>
-  </div>
+    <div id="about"> 
+  <div className="w-full grid place-items-center gap-6 py-16 px-6 bg-">
+  <div className="grid grid-cols-1 lg:grid-cols-2 w-full max-w-5xl gap-12 items-center">
+    {/* Text Content */}
+    <div className="flex flex-col text-center items-center lg:items-start lg:text-left gap-5  md:gap-10">
+      <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug">
+        Fast, Fresh, and <br /> <span className="text-primary">Right on Time</span>
+      </h2>
+      <ul className="space-y-2 md:space-y-4 text-gray-700 text-xs md:text-lg">
+        <li className="flex items-center gap-4">
+          <i className="fa-solid fa-check text-green-700 text-sm md:text-xl"></i>
+          Hot and fresh, every time
+        </li>
+        <li className="flex items-center gap-4">
+          <i className="fa-solid fa-check text-green-700 text-sm md:text-xl"></i>
+          Delivered in 30 minutes or less
+        </li>
+        <li className="flex items-center gap-4">
+          <i className="fa-solid fa-check text-green-700 text-sm md:text-xl"></i>
+          Top Restaurants Near You
+        </li>
+      </ul>
+    </div>
 
- 
-  <div class="mb-16">
-    <h2 class="text-3xl font-semibold text-center mb-8">Partner Restaurants & Signature Chefs</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-center">
-      <div>
-        <h3 class="font-bold text-xl">🍔 Grill Masterz</h3>
-        <p class="text-gray-600">Chef Ali – Flame-grilled burgers & crispy fries</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl">🍛 Biryani House</h3>
-        <p class="text-gray-600">Chef Sara – Authentic Hyderabadi biryani & karahi</p>
-      </div>
-      <div>
-        <h3 class="font-bold text-xl">🥗 Fresh Bowl</h3>
-        <p class="text-gray-600">Chef Lina – Clean eating with a twist</p>
-      </div>
+   
+    <div className="rounded-xl overflow-hidden shadow-md hover:scale-105 transition-transform duration-300">
+      <img
+        src="https://chaophraya.co.uk/fileadmin/_processed_/9/5/csm_THAIKHUN_KIM_-_FOOD___DRINK_FINISHED_WEB_72-21_4161440349.jpg"
+        alt="Delicious food"
+        className="w-full object-cover h-full"
+      />
     </div>
   </div>
 
- 
-  <div class="mb-16">
-    <h2 class="text-3xl font-semibold text-center mb-6">What Our Users Say</h2>
-    <div class="flex space-x-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory">
-      <div class="min-w-[250px] bg-gray-100 p-6 rounded-xl shadow text-center snap-start">
-        <p class="italic">"Love the smooth interface. Found 3 great restaurants in one app!"</p>
-        <p class="mt-3 font-semibold">— Ayesha R.</p>
-        <p class="text-yellow-500">⭐⭐⭐⭐⭐</p>
-      </div>
-      <div class="min-w-[250px] bg-gray-100 p-6 rounded-xl shadow text-center snap-start">
-        <p class="italic">"Mock order tracking is actually so cool. Impressed by the design!"</p>
-        <p class="mt-3 font-semibold">— Bilal H.</p>
-        <p class="text-yellow-500">⭐⭐⭐⭐☆</p>
-      </div>
-      <div class="min-w-[250px] bg-gray-100 p-6 rounded-xl shadow text-center snap-start">
-        <p class="italic">"The UI is so responsive and clean — feels like a real app!"</p>
-        <p class="mt-3 font-semibold">— Maria T.</p>
-        <p class="text-yellow-500">⭐⭐⭐⭐⭐</p>
-      </div>
-      <div class="min-w-[250px] bg-gray-100 p-6 rounded-xl shadow text-center snap-start">
-        <p class="italic">"Great job! Love how fast and simple it is to navigate."</p>
-        <p class="mt-3 font-semibold">— Usman Q.</p>
-        <p class="text-yellow-500">⭐⭐⭐⭐</p>
-      </div>
-    </div>
+
+  <div className="bg-white text-gray-800 p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-4xl text-center md:text-left">
+    <p className="text-[12px] md:text-lg leading-relaxed">
+      Our restaurant’s chefs are dedicated to delivering not just meals, but moments. They always strive to be on time and ensure every dish is served hot, fresh, and full of flavor — just the way you love it.
+    </p>
   </div>
-
-  <div class="text-center">
-    <h2 class="text-3xl font-semibold mb-4">Tech Behind the Magic</h2>
-    <ul class="list-disc list-inside space-y-2 text-gray-700 max-w-md mx-auto text-left">
-      <li>⚛️ <strong>React</strong> — Interactive UI with component-based structure</li>
-      <li>🎨 <strong>Tailwind CSS</strong> — Clean, modern utility-first styling</li>
-      <li>🔥 <strong>Firebase</strong> — Secure user authentication and database</li>
-      <li>⚡ <strong>Parcel</strong> or <strong>Vite</strong> — Lightning-fast dev & build tools</li>
-    </ul>
-  </div>
-</section>
+</div>
 
 
+        <section className="bg-primary text-center">
+          <div className="p-6 lg:p-20 space-y-7 md:space-y-14">
+            <h2 className="text-xl md:text-3xl font-bold text-dark-background">How It Works</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14">
+          
+              <div className="flex flex-col items-center gap-5">
+                <div className=" flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
+                  <img className="rounded-md" src={IMG_ONE} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-md md:text-xl font-semibold text-dark-background">You Select</h3>
+                  <p className="text-black text-xs md:text-md">Browse the menu and pick your favorite meals from nearby restaurants.</p>
+                </div>
+              </div>
+
+          
+              <div className="flex flex-col items-center gap-8">
+                <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
+                  <img className="rounded-md" src={IMG_TWO} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-md md:text-xl font-semibold text-dark-background">We Prepare</h3>
+                  <p className="text-black text-xs md:text-md">Our chefs quickly prepare your order with fresh and hot ingredients.</p>
+                </div>
+              </div>
+
+            
+              <div className="flex flex-col items-center gap-8 ">
+                <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
+                  <img className="rounded-md" src={IMG_THREE} />
+                </div>
+                <div className="space-y-2">
+                  <h3 className="text-md md:text-xl font-semibold text-dark-background">Rider Delivers</h3>
+                  <p className="text-black text-xs md:text-md">A rider picks it up and delivers it straight to your doorstep — fast & safe.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
     </div>
     

@@ -12,7 +12,6 @@ import { Provider } from "react-redux";
 import Cart from "./Components/Cart";
 import Main from "./Components/Main";
 import Footer from "./Components/Footer";
-import About from "./Components/About";
 import Login from "./Components/Login";
 import Checkout from "./Components/Checkout";
 
@@ -62,7 +61,7 @@ const appRouter = createBrowserRouter([
         path: "/",
         element: (
           <>
-            <Header showMenu={true} />
+            <Header showMenu={true} showAbout={true} />
             <Main />
             <Body />
           </>
@@ -72,7 +71,7 @@ const appRouter = createBrowserRouter([
         path: "/contact",
         element: (
           <>
-            <Header showMenu={false} />
+            <Header showMenu={false} showAbout={false}/>
             <Contact />
           </>
         ),
@@ -83,15 +82,6 @@ const appRouter = createBrowserRouter([
           <>
             <Header showMenu={true} />
             <RestaurantMenu />
-          </>
-        ),
-      },
-      {
-        path: "/about",
-        element: (
-          <>
-            <Header showMenu={false} />
-            <About />
           </>
         ),
       },
