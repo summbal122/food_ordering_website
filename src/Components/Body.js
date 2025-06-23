@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
-import { Shimmer } from "./Shimmer";
 import RestaurantCard, { promotedRestaurant } from "./RestaurantCard";
 import { addMenuItems } from "../utils/resItemsSlice";
 import About from "./About";
+import {Shimmer} from "../Components/Shimmer"
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -79,9 +79,7 @@ const Body = () => {
       <button
         className="rounded-sm px-4 py-2 text-[10px]  md:text-xs bg-black text-white hover:opacity-80"
         onClick={handleSearch}
-      >
-        Search
-      </button>
+      >Search</button>
     </div>
     <div className="flex justify-center">
       <button
@@ -97,11 +95,7 @@ const Body = () => {
   <div className="grid grid-cols-2 px-2  py-4 md:grid-cols-3 lg:grid-cols-4 w-10/12 2xl:grid-cols-7 gap-3 md:gap-8 2xl:gap-8 mt-8 md:mt-12 pb-10 lg:pb-20">
     {filteredRestaurants.map((res) => (
       <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-        {res.info.type === "F" ? (
-          <RestaurantCardPromoted resData={res} />
-        ) : (
           <RestaurantCard resData={res} />
-        )}
       </Link>
     ))}
   </div>

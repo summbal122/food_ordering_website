@@ -34,7 +34,7 @@ it("should search restaurants with name Burger" , async () => {
   fireEvent.click(searchButton);
 
   const cards = screen.getAllByTestId("resCard");
-  expect(cards.length).toBe(1); // length is a number, so use toBe()
+  expect(cards.length).toBe(1); 
 });
 
 

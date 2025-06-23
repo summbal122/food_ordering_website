@@ -5,36 +5,36 @@ const RestaurantCard = ({ resData }) => {
   const { id, name, avgRating, cuisines, cloudinaryImageId } = resData?.info;
 
   return (
-    <Link
-      to={`/restaurant/${id}`}
-      className="no-underline text-inherit"
-    >
+    <Link to={`/restaurant/${id}`} className="no-underline text-inherit">
       <div
         data-testid="resCard"
-        className="h-[250px] md:h-[320px] 2xl:h-[365px] bg-white rounded-md overflow-hidden shadow-md hover:shadow-2xl cursor-pointer"
+        className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 h-full flex flex-col"
       >
-       
-        <div className="border-b space-y-2 border-b-gray-200">
-        <div className="flex md:h-56 p-2 w-full justify-center border border-light-background overflow-hidden">
+        <div className="aspect-[4/3] bg-gray-100 overflow-hidden">
           <img
-            className="w-full object-fill md:rounded-md"
+            className="w-full h-full object-cover"
             src={URL + cloudinaryImageId}
             alt={name}
           />
         </div>
 
-          <div className="px-3 pb-2 flex items-center justify-between">
-            <h1 className="font-bold text-[6px] md:text-xs 2xl:text-sm">{name}</h1>
-            <div className="flex items-center gap-1.5">
-              <span className="text-red-500 text-[4px] md:text-[10px] 2xl:text-sm font-bold">{avgRating}</span>
-              <span className="text-primary-darker text-[4px] md:text-xs 2xl:text-sm">★</span>
-            </div>
+      <div className="p-2">
+        <div className="px-3 py-2 flex items-center justify-between border-b border-gray-200">
+          <h1 className="font-semibold text-[10px] sm:text-xs md:text-sm truncate">{name}</h1>
+          <div className="flex items-center gap-1">
+            <span className="text-orange-500 font-bold text-[8px] sm:text-xs md:text-sm">
+              {avgRating}
+            </span>
+            <span className="text-yellow-500 text-[8px] sm:text-xs md:text-sm">★</span>
           </div>
         </div>
 
-       
-        <div className="p-1 px-3 md:py-4">
-          <h4 className="text-gray-600 text-[5px] md:text-[8px] 2xl:text-sm">{cuisines?.join(", ")}</h4>
+    
+        <div className="px-3 py-2">
+          <p className="text-gray-500 text-[8px] sm:text-[10px] md:text-xs truncate">
+            {cuisines?.join(", ")}
+          </p>
+        </div>
         </div>
       </div>
     </Link>
@@ -46,8 +46,12 @@ export const promotedRestaurant = (RestaurantCard) => {
     const { resData } = props;
     const avgRating = resData?.info?.avgRating;
     return (
-      <div>
-        {avgRating > 4.9 && <h5 className="text-sm text-orange-500 font-semibold mb-1">Promoted</h5>}
+      <div className="relative">
+        {avgRating > 4.9 && (
+          <span className="absolute top-1 left-1 z-10 bg-orange-100 text-orange-600 text-[8px] sm:text-[10px] px-2 py-1 rounded-full font-semibold">
+            PROMOTED
+          </span>
+        )}
         <RestaurantCard {...props} />
       </div>
     );

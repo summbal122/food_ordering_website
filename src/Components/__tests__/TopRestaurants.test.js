@@ -23,6 +23,6 @@ it("should",  async () => {
 
   fireEvent.click(topRestaurants);
   const resCard = screen.getAllByTestId("resCard");
-  expect((resCard).length).toBe(3);
+  expect((resCard).length).toBe(5);
 
 });

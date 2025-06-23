@@ -1,4 +1,3 @@
-import IMG from "../../images/contact.png";
 
 const Contact = () => {
   return (
@@ -91,13 +90,13 @@ const Contact = () => {
           name="about"
           id="about"
           rows="4"
+          placeholder="message"
           className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 placeholder:text-gray-400 focus:outline-secondary"
           required
         ></textarea>
       </div>
 
-      <button className="bg-black text-white rounded-lg py-2 px-6 2xl:py-4 2xl:px-12 text-sm md:text-md 2xl:text-2xl self-start hover:opacity-80 transition ">
-        Submit
+      <button className="bg-black text-white rounded-lg py-2 px-6 2xl:py-4 2xl:px-12 text-sm md:text-md 2xl:text-2xl self-start hover:opacity-80 transition ">Submit
       </button>
     </form>
   </div>

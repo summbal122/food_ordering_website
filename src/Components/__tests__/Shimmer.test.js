@@ -1,7 +1,7 @@
 import { Shimmer } from "../Shimmer";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { BrowserRouter } from "react-router-dom"; // fix here too if needed
+import { BrowserRouter } from "react-router"; // fix here too if needed
 
 it("should render shimmer effect", () => {
   render(
@@ -10,6 +10,6 @@ it("should render shimmer effect", () => {
     </BrowserRouter>
   );
 
-  const shimmerElements = screen.getAllByTestId("shimmer");
+  const shimmerElements = screen.getAllByTestId("Shimmer");
   expect(shimmerElements.length).toBeGreaterThan(0);
 });
