@@ -23,7 +23,7 @@ const ItemList = ({ items }) => {
           <div
             data-testid="foodItems"
             key={info.id || index}
-            className="grid gap-4 p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white"
+            className="grid gap-4 p-3 md:p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white"
           >
             <div className="relative min-w-[96px] h-24 rounded overflow-hidden">
               <img
@@ -32,7 +32,7 @@ const ItemList = ({ items }) => {
                 className="object-cover w-24 h-24 rounded"
               />
               <button
-                className="absolute bottom-1 right-1 bg-green-500 hover:bg-green-600 text-white text-sm px-2 py-1 rounded shadow-md"
+                className="absolute bottom-1 right-1 bg-green-500 hover:bg-green-600 text-white text-xs md:text-sm px-2 py-1 rounded shadow-md"
                 onClick={() => handleAddItems(info)}
               >
                 +
@@ -41,10 +41,10 @@ const ItemList = ({ items }) => {
 
             <div className="flex flex-col flex-grow">
               <div className="flex justify-between items-center">
-                <h3 className="font-semibold text-sm text-gray-800">{info.name}</h3>
+                <h3 className="font-semibold text-xs md:text-sm text-gray-800">{info.name}</h3>
                 <span className="text-xs text-red-400 font-semibold">{price} RS</span>
               </div>
-              <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+              <p className="text-[8px] md:text-xs text-gray-500 mt-1 line-clamp-2">
                 {info.description}
               </p>
             </div>

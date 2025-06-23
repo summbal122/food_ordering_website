@@ -8,7 +8,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
           className="flex justify-between items-center p-4 gap-8 cursor-pointer"
           onClick={setShowIndex}
         >
-          <span className="font-semibold text-sm">
+          <span className="font-semibold text-[10px] md:text-sm">
             {data.title} ({data.itemCards.length})
           </span>
           <i

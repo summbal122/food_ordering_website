@@ -2,15 +2,21 @@ import { useSelector } from "react-redux";
 import { URL } from "../utils/constant"; 
 import { Link } from "react-router";
 import { calculateTotalAmount } from "../utils/totalAmount";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
 
 
 
 
 
 const Checkout = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
   const totalAmount = calculateTotalAmount(cartItems);
   console.log(cartItems);
+  const handlebuttonClick = () => {
+    dispatch(clearCart(cartItems));
+  }
 
   return (
     <div className="min-h-screen w-full text-center space-y-6 p-4">
@@ -101,6 +107,7 @@ const Checkout = () => {
   </div>
 
   <button
+  onClick={handlebuttonClick}
     type="submit"
     class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition font-semibold"
   >

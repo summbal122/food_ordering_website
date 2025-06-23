@@ -11,30 +11,30 @@ const RestaurantCard = ({ resData }) => {
     >
       <div
         data-testid="resCard"
-        className="flex flex-col w-[240px] h-[320px] bg-white rounded-md shadow-md hover:shadow-2xl cursor-pointer"
+        className="h-[210px] md:h-[320px] 2xl:h-[365px] bg-white rounded-md overflow-hidden shadow-md hover:shadow-2xl cursor-pointer"
       >
        
-        <div className="border-b border-b-gray-200">
-          <div className="flex justify-center p-5 border-light-background">
-            <img
-              className="rounded-md w-[180px] h-48 object-cover"
-              src={URL + cloudinaryImageId}
-              alt={name}
-            />
-          </div>
+        <div className="border-b space-y-2 border-b-gray-200">
+        <div className="flex h-36 md:h-56 p-2 w-full justify-center border border-light-background overflow-hidden">
+          <img
+            className="w-full h-full object-cover md:rounded-md"
+            src={URL + cloudinaryImageId}
+            alt={name}
+          />
+        </div>
 
           <div className="px-3 pb-2 flex items-center justify-between">
-            <h1 className="font-bold text-xs">{name}</h1>
+            <h1 className="font-bold text-[6px] md:text-xs 2xl:text-sm">{name}</h1>
             <div className="flex items-center gap-1">
-              <span className="text-red-500 text-[10px] font-bold">{avgRating}</span>
-              <span className="text-gray-500 text-xs">★</span>
+              <span className="text-red-500 text-[4px] md:text-[10px] 2xl:text-sm font-bold">{avgRating}</span>
+              <span className="text-gray-500 text-[4px] md:text-xs 2xl:text-sm">★</span>
             </div>
           </div>
         </div>
 
        
-        <div className="px-3 py-4">
-          <h4 className="text-gray-600 text-[8px]">{cuisines?.join(", ")}</h4>
+        <div className="p-1 px-3 md:py-4">
+          <h4 className="text-gray-600 text-[5px] md:text-[8px] 2xl:text-sm">{cuisines?.join(", ")}</h4>
         </div>
       </div>
     </Link>

@@ -4,10 +4,10 @@ import React from 'react';
 const Footer = () => {
   return (
      
-      <footer className="bg-black  text-gray-400 text-sm w-full ">
-  <div className="w-3/4 flex justify-between mx-auto py-15">
+      <footer className="bg-black flex flex-col items-center text-gray-400 text-[5px] md:text-[8px] lg:text-sm 2xl:text-2xl">
+  <div className="w-11/12 md:w-3/4 grid grid-cols-4 md:grid-cols-4  md:space-y-0 p-4 md:p-10 2xl:p-20  place-items-center">
     <div >
-      <ul className="space-y-3 ">
+      <ul className="space-y-1 md:space-y-3 ">
         <li className='hover:font-semibold'><a href="#">FAQ</a></li>
         <li className='hover:font-semibold'><a href="#">Help Center</a></li>
         <li className='hover:font-semibold'><a href="#">Terms of Use</a></li>
@@ -15,7 +15,7 @@ const Footer = () => {
       </ul>
     </div>
     <div>
-      <ul className="space-y-3">
+      <ul className="space-y-1 md:space-y-3">
         <li className='hover:font-semibold'><a href="#">About</a></li>
         <li className='hover:font-semibold'><a href="#">Careers</a></li>
         <li className='hover:font-semibold'><a href="#">Press</a></li>
@@ -23,14 +23,15 @@ const Footer = () => {
       </ul>
     </div>
     <div>
-      <ul className="space-y-3">
+      <ul className="space-y-1 md:space-y-3">
         <li className='hover:font-semibold'><a href="#">Contact Us</a></li>
         <li className='hover:font-semibold'><a href="#">Affiliate</a></li>
         <li className='hover:font-semibold'><a href="#">Cookies</a></li>
+        <li className='hover:font-semibold'><a href="#">Stories</a></li>
       </ul>
     </div>
     <div>
-      <ul className="space-y-3">
+      <ul className="space-y-1 md:space-y-3">
         <li className='hover:font-semibold'><a href="#">Facebook</a></li>
         <li className='hover:font-semibold'><a href="#">Twitter</a></li>
         <li className='hover:font-semibold'><a href="#">Instagram</a></li>
