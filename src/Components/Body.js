@@ -94,7 +94,7 @@ const Body = () => {
     </div>
   </div>
 
-  <div className="grid grid-cols-2 p-4 md:grid-cols-3 lg:grid-cols-4 lg:w-10/12 2xl:grid-cols-7 gap-3 md:gap-6 sm:gap-8 mt-8 md:mt-12 pb-10 lg:pb-20">
+  <div className="grid grid-cols-2 px-2  py-4 md:grid-cols-3 lg:grid-cols-4 w-10/12 2xl:grid-cols-7 gap-3 md:gap-8 2xl:gap-8 mt-8 md:mt-12 pb-10 lg:pb-20">
     {filteredRestaurants.map((res) => (
       <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
         {res.info.type === "F" ? (

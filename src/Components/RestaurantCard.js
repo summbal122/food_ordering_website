@@ -11,11 +11,11 @@ const RestaurantCard = ({ resData }) => {
     >
       <div
         data-testid="resCard"
-        className="h-[210px] md:h-[320px] 2xl:h-[365px] bg-white rounded-md overflow-hidden shadow-md hover:shadow-2xl cursor-pointer"
+        className="h-[250px] md:h-[320px] 2xl:h-[365px] bg-white rounded-md overflow-hidden shadow-md hover:shadow-2xl cursor-pointer"
       >
        
         <div className="border-b space-y-2 border-b-gray-200">
-        <div className="flex h-36 md:h-56 p-2 w-full justify-center border border-light-background overflow-hidden">
+        <div className="flex md:h-56 p-2 w-full justify-center border border-light-background overflow-hidden">
           <img
             className="w-full object-fill md:rounded-md"
             src={URL + cloudinaryImageId}
