@@ -1,3 +1,5 @@
  export const URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
  export const LOGO_URL = "https://thumbs.dreamstime.com/b/chef-hand-gesture-ok-emblem-male-cook-logo-label-decoration-restaurant-cafe-menu-design-vector-illustration-323436479.jpg";
 export const MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=25.3266973&lng=82.9869733&restaurantId=";
+export const RES_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6109026&lng=77.1149472&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+export const MAP_URL = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999428291742!2d2.292292615674318!3d48.858373079287846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fef3c2c9f2d%3A0x9e31c3427d0f8973!2sEiffel%20Tower!5e0!3m2!1sen!2sfr!4v1627391574263!5m2!1sen!2sfr"

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
@@ -12,17 +12,13 @@ const RestaurantMenu = () => {
   const menuData = useSelector((store) => store.restaurantMenu.menu);
   const [showIndex, setShowIndex] = useState(null);
 
- 
   if (!menuData || Object.keys(menuData).length === 0) return <Shimmer />;
-
   const info = menuData?.cards?.find(
     (card) => card.card?.card?.info
   )?.card?.card?.info;
 
   if (!info) return <Shimmer />;
-
-  const { name, cuisines, avgRating, costForTwoMessage } = info;
-
+  const { name, cuisines} = info;
   const categories =
     menuData?.cards
       ?.find((card) => card.groupedCard)

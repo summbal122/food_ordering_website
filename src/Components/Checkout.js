@@ -46,6 +46,7 @@ const Checkout = () => {
       <div className="lg:mt-24">
         <div className="flex justify-center"> 
           <div className="grid grid-cols-1 md:grid-cols-2 w-11/12 lg:w-11/12 items-center gap-10">
+     {/* Details Form */}
             <div>
               <form className="bg-white shadow-lg rounded-lg w-full max-w-4xl mx-auto py-4 px-3 lg:p-6 space-y-3 lg:space-y-6">
                 <h2 className="text-md lg:text-2xl 2xl:text-4xl font-bold text-gray-800 text-center">Your Details</h2>
@@ -91,7 +92,7 @@ const Checkout = () => {
               </form>
             </div>
 
-        
+        {/* Order Details */}
             <div className="bg-white shadow-lg py-4 lg:py-8 px-3 lg:px-10 space-y-9 rounded-lg"> 
               <h1 className="text-md lg:text-2xl 2xl:text-4xl font-bold text-gray-800 text-center flex items-center justify-center gap-2">
                 Your Order

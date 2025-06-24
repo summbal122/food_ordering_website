@@ -2,13 +2,11 @@ import IMG from "../../images/app_logo.png";
 import SIDE_IMG from "../../images/side_img.jpg";
 import { useState, } from "react";
 import { useNavigate } from "react-router";
-// import auth from "../utils/auth"
 import { createUserWithEmailAndPassword , updateProfile} from "firebase/auth";
 import { useRef } from "react";
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { Link } from "react-router";
-
 
 
 const Login = () => {
@@ -50,7 +48,6 @@ const handleSignUp = (e) => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-       
         navigate("/");
       })
       .catch((error) => {
@@ -62,12 +59,11 @@ const handleSignUp = (e) => {
   const handleButtonClick = () =>{
     setSignUp_IN(signUp_IN === "Login" ? "Sign Up" : "Login");
   
-
   }
 
   return (
     <div className="h-screen flex flex-col md:flex-row overflow-hidden">
-      <div className="flex-1 border-5  flex flex-col justify-center items-center px-6 lg:px-16 relative z-10 bg-white">
+      <div className="flex-1 flex flex-col justify-center items-center px-6 lg:px-16 relative z-10 bg-white">
          <img
           className="w-24 2xl:w-44 absolute top-4  left-6 lg:left-10"
           src={IMG}

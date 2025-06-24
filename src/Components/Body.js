@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router";
-import RestaurantCard, { promotedRestaurant } from "./RestaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import { addMenuItems } from "../utils/resItemsSlice";
 import About from "./About";
 import {Shimmer} from "../Components/Shimmer"
+import { RES_LIST } from "../utils/constant";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,6 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
-  const RestaurantCardPromoted = promotedRestaurant(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -24,9 +23,7 @@ const Body = () => {
   }, [allRestaurants]);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6109026&lng=77.1149472&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_LIST);
     const json = await data.json();
     const resList = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     dispatch(addMenuItems(resList));
@@ -48,12 +45,11 @@ const Body = () => {
   return allRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div>
-      <div className="bg-gray-100 ">
+     <div className="bg-gray-100 ">
       <About/>
 
 
-<section id="menu" className="flex flex-col py-10 items-center sm:px-6 md:px-2 lg:px-2">
+     <section id="menu" className="flex flex-col py-10 items-center sm:px-6 md:px-2 lg:px-2">
   <div className="flex justify-center text-center">
     <h2 className="text-md md:text-2xl lg:text-3xl 2xl:text-6xl font-semibold max-w-3xl">
       Explore Top Restaurants Near You
@@ -99,10 +95,10 @@ const Body = () => {
       </Link>
     ))}
   </div>
-</section>
+     </section>
 
       </div>
-    </div>
+   
   );
 };
 

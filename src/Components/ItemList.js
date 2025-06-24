@@ -12,13 +12,9 @@ const ItemList = ({ items }) => {
   return (
     <div className="space-y-4">
       {items.map((item, index) => {
-
         const info = item.card?.info || item;
-
         if (!info) return null;
-
         const price = info.price ? info.price / 100 : info.defaultPrice / 100;
-
         return (
           <div
             data-testid="foodItems"

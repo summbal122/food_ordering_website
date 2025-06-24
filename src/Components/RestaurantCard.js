@@ -41,21 +41,5 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
-export const promotedRestaurant = (RestaurantCard) => {
-  return (props) => {
-    const { resData } = props;
-    const avgRating = resData?.info?.avgRating;
-    return (
-      <div className="relative">
-        {avgRating > 4.9 && (
-          <span className="absolute top-1 left-1 z-10 bg-orange-100 text-orange-600 text-[8px] sm:text-[10px] px-2 py-1 rounded-full font-semibold">
-            PROMOTED
-          </span>
-        )}
-        <RestaurantCard {...props} />
-      </div>
-    );
-  };
-};
 
 export default RestaurantCard;

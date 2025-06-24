@@ -1,11 +1,9 @@
 @import "tailwindcss";
-
 @theme {
   --color-dark-background: #0f5451;
   --color-secondary: #EAE4D5;
   --color-primary: #f2c878;
   --color-light-background: #f8f2f4;
   --font-Edu-SA-hand: "Edu SA Hand", "cursive";
-  --bg-footer:#b89f8a ;
   --color-primary-darker: #b88d33;
 }

@@ -1,9 +1,10 @@
-
+import { MAP_URL } from "../utils/constant";
 const Contact = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-secondary min-h-screen w-full">
-<div className="w-full grid md:grid-cols-2 gap-2 place-items-center text-dark-background py-16 px-4 bg-[#fefefe]">
-  {/* Contact Info */}
+    <div className="w-full grid md:grid-cols-2 gap-2 place-items-center text-dark-background py-16 px-4 bg-[#fefefe]">
+  
+    {/* Contact Info */}
   <div className="grid px-6 md:px-10 lg:px-20 w-full gap-3 md:gap-6 2xl:gap-16 ">
     <div className="space-y-4">
       <h2 className="text-center mb-8 md:mb-10 md:text-start text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl font-bold text-black">
@@ -52,7 +53,7 @@ const Contact = () => {
           <input
             type="text"
             name="first-name"
-            className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-secondary"
+            className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-dark-background"
             required
           />
         </div>
@@ -64,7 +65,7 @@ const Contact = () => {
           <input
             type="text"
             name="last-name"
-            className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-secondary"
+            className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-dark-background"
             required
           />
         </div>
@@ -77,7 +78,7 @@ const Contact = () => {
         <input
           type="email"
           name="email"
-          className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-secondary"
+          className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 focus:outline-dark-background"
           required
         />
       </div>
@@ -91,7 +92,7 @@ const Contact = () => {
           id="about"
           rows="4"
           placeholder="message"
-          className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 placeholder:text-gray-400 focus:outline-secondary"
+          className="mt-2 w-full rounded-md border border-gray-300 p-2 lg:p-3 text-sm 2xl:text-2xl text-gray-900 placeholder:text-gray-400 focus:outline-dark-background"
           required
         ></textarea>
       </div>
@@ -116,7 +117,7 @@ const Contact = () => {
       <div className="mt-10 w-11/12 md:w-10/12 h-[200px] lg:h-[400px] 2xl:h-[600px] rounded-md overflow-hidden">
         <iframe
           title="Our Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999428291742!2d2.292292615674318!3d48.858373079287846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fef3c2c9f2d%3A0x9e31c3427d0f8973!2sEiffel%20Tower!5e0!3m2!1sen!2sfr!4v1627391574263!5m2!1sen!2sfr"
+          src={MAP_URL}
           width="100%"
           height="100%"
           loading="lazy"

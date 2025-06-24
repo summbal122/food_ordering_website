@@ -7,6 +7,7 @@ const About = ()=>{
   <div className="w-full grid place-items-center gap-6 py-16 px-6 bg-">
   <div className="grid grid-cols-1 lg:grid-cols-2 w-full max-w-5xl gap-12 items-center">
     {/* Text Content */}
+   
     <div className="flex flex-col text-center items-center lg:items-start lg:text-left gap-5  md:gap-10">
       <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug">
         Fast, Fresh, and <br /> <span className="text-primary">Right on Time</span>
