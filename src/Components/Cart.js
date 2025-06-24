@@ -31,9 +31,8 @@ const totalAmount = calculateTotalAmount(cartItems);
           <button
             className=" md:text-sm text-red-500 text-xs underline hover:text-red-700"
             onClick={handleClearItems}
-          >
-            Clear All
-          </button>
+          >Clear All
+</button>
         </div>
 
         {cartItems.length === 0 ? (

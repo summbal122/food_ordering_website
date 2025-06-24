@@ -34,9 +34,7 @@ const ItemList = ({ items }) => {
               <button
                 className="absolute bottom-1 right-1 bg-green-500 hover:bg-green-600 text-white text-xs md:text-sm px-2 py-1 rounded shadow-md"
                 onClick={() => handleAddItems(info)}
-              >
-                +
-              </button>
+              >+</button>
             </div>
 
             <div className="flex flex-col flex-grow">

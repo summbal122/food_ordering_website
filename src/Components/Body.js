@@ -30,7 +30,7 @@ const Body = () => {
     const json = await data.json();
     const resList = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     dispatch(addMenuItems(resList));
-    console.log(resList);
+
   };
 
   const handleSearch = () => {

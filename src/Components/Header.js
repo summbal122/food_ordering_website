@@ -26,7 +26,7 @@ const Header = ({ showMenu, showAbout }) => {
         navigate("/login");
       })
       .catch((error) => {
-        console.error("Sign out error:", error);
+        
       });
   };
 
@@ -62,7 +62,9 @@ const Header = ({ showMenu, showAbout }) => {
 
         <div className="flex gap-2 md:gap-6 lg:gap-8 items-center text-[9px] md:text-sm 2xl:text-4xl cursor-pointer">
           <i onClick={() => setShowCart(!showCart)} className="fa-solid fa-cart-shopping text-[9px]  md:text-sm 2xl:text-4xl ">
-            <span className="text-[8px] md:text-[12px] 2xl:text-3xl">- {cartItems.reduce((t, i) => t + i.quantity, 0)}</span>
+            <span
+            data-testid = "cart"
+             className="text-[8px] md:text-[12px] 2xl:text-3xl">-{cartItems.reduce((t, i) => t + i.quantity, 0)}</span>
           </i>
           {user ? (
             <>

@@ -1,47 +1,51 @@
+jest.mock("react-router", () => ({
+  ...jest.requireActual("react-router"),
+  useOutletContext: () => ({
+    showCart: true,
+    setShowCart: jest.fn(),
+  }),
+}));
 
-import { fireEvent, render, screen } from "@testing-library/react"
-import { act } from "@testing-library/react"
-import RestaurantMenu from "../RestaurantMenu";
-import MOCK_DATA from "../mocks/mockResMenu.json"
-import { Provider } from "react-redux"
+import { render, screen } from "@testing-library/react";
+import Cart from "../Cart";
+import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
-import Header from "../Header"
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
-import Cart from "../Cart"
+import { addItem } from "../../utils/cartSlice";
 
-
- global.fetch=jest.fn(() =>
-  Promise.resolve({
-    json: () => Promise.resolve(MOCK_DATA) 
-  })
- )
-
-it ("should load restaurant menu component", async () => {
-  await act( async () => {
-    render (
-      <Provider store= {appStore}>
-        <BrowserRouter>
-        <Header/>
-        </BrowserRouter>
+test("renders Cart component with empty cart message", () => {
+  render(
+    <Provider store={appStore}>
+      <BrowserRouter>
         <Cart />
-        <RestaurantMenu/> 
-      </Provider>   
-    )
-  });
+      </BrowserRouter>
+    </Provider>
+  );
 
-  const accordionHeader = screen.getByText("Classic Bowls (10)");
-  fireEvent.click(accordionHeader);
-  
-  const addButtons =screen.getAllByRole("button", {name : "Add +"});
-  fireEvent.click(addButtons[0]);
-  
+  expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
+});
 
-  expect(screen.getByText("Cart - 1")).toBeInTheDocument();
+test("renders Cart with one item", () => {
+  // Add item to store before rendering
+  appStore.dispatch(
+    addItem({
+      id: "123",
+      name: "Burger",
+      price: 200,
+      quantity: 1,
+      imageId: "img123",
+    })
+  );
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(11);
-  fireEvent.click(screen.getByRole("button", {name: "Remove"}));
+  render(
+    <Provider store={appStore}>
+      <BrowserRouter>
+        <Cart />
+      </BrowserRouter>
+    </Provider>
+  );
 
-  expect(screen.getAllByTestId("foodItems").length).toBe(10);
-
+  expect(screen.getByText(/burger/i)).toBeInTheDocument();
+  expect(screen.getByText("$2.00 × 1 = $2.00")).toBeInTheDocument();
 });

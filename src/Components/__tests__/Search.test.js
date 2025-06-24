@@ -3,6 +3,8 @@ import Body from "../Body";
 import MOCK_DATA from "../mocks/mockResLisData.json";
 import { BrowserRouter } from "react-router";
 import "@testing-library/jest-dom";
+import { Provider } from "react-redux";
+import appStore from "../../utils/appStore";
 
 
 // fake api call
@@ -13,13 +15,14 @@ global.fetch = jest.fn(() =>
   })
 );
 
-
 it("should search restaurants with name Burger" , async () => {
   await act(async () => {
     render(
+      <Provider store={appStore} >
       <BrowserRouter>
           <Body />
       </BrowserRouter>
+     </Provider>
     );
 
   });

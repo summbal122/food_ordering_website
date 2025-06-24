@@ -36,11 +36,11 @@ const handleSignUp = (e) => {
         });
       })
       .then(() => {
-        console.log("Account created and profile updated!");
+ 
         navigate("/");
       })
       .catch((error) => {
-        console.error("Sign Up Error:", error.code, error.message);
+     
       });
   } else {
     signInWithEmailAndPassword(
@@ -50,18 +50,18 @@ const handleSignUp = (e) => {
     )
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Logged in:", user.email);
+       
         navigate("/");
       })
       .catch((error) => {
-        console.error("Login Error:", error.code, error.message);
+    
       });
   }
 };
 
   const handleButtonClick = () =>{
     setSignUp_IN(signUp_IN === "Login" ? "Sign Up" : "Login");
-    console.log(setSignUp_IN);
+  
 
   }
 

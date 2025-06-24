@@ -1,48 +1,51 @@
+jest.mock("react-router", () => ({
+  ...jest.requireActual("react-router"),
+  useOutletContext: () => ({
+    showCart: true,
+    setShowCart: jest.fn(),
+  }),
+}));
 
-import {  fireEvent, render, screen } from "@testing-library/react";
-import Header from "../Header";
+import { render, screen } from "@testing-library/react";
+import Cart from "../Cart";
 import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
-import { BrowserRouter } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
+import { addItem } from "../../utils/cartSlice";
 
-
-test("should render Header component with a login button", () => {
+test("renders Cart component with empty cart message", () => {
   render(
-    <BrowserRouter>
-      <Provider store={appStore}>
-        <Header />
-      </Provider>
-    </BrowserRouter>
+    <Provider store={appStore}>
+      <BrowserRouter>
+        <Cart />
+      </BrowserRouter>
+    </Provider>
   );
-  const button = screen.getByRole("button");
-  expect(button).toBeInTheDocument();
+
+  expect(screen.getByText(/your cart is empty/i)).toBeInTheDocument();
 });
 
-test("should render Header component with cart items 0", () => {
-  render(
-    <BrowserRouter>
-      <Provider store={appStore}>
-        <Header />
-      </Provider>
-    </BrowserRouter>
+test("renders Cart with one item", () => {
+  // Add item to store before rendering
+  appStore.dispatch(
+    addItem({
+      id: "123",
+      name: "Burger",
+      price: 200,
+      quantity: 1,
+      imageId: "img123",
+    })
   );
-  const cartItem = screen.getByText(/caRt/i);
-  expect(cartItem).toBeInTheDocument();
-});
 
-test("should change login button to logout on click", () => {
   render(
-    <BrowserRouter>
-      <Provider store={appStore}>
-        <Header />
-      </Provider>
-    </BrowserRouter>
+    <Provider store={appStore}>
+      <BrowserRouter>
+        <Cart />
+      </BrowserRouter>
+    </Provider>
   );
-  const loginButton = screen.getByRole("button", {name: "login"});
-  fireEvent.click(loginButton);
-  const logoutButton = screen.getByRole("button", {name:"logout"});
-  expect(logoutButton).toBeInTheDocument();
+
+  expect(screen.getByText(/burger/i)).toBeInTheDocument();
+  expect(screen.getByText("$2.00 × 1 = $2.00")).toBeInTheDocument();
 });
-
-

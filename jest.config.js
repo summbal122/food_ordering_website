@@ -5,6 +5,7 @@
 
 /** @type {import('jest').Config} */
 const config = {
+  
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -20,7 +21,9 @@ const config = {
 
   // Indicates whether the coverage information should be collected while executing the test
   collectCoverage: true,
-
+moduleNameMapper: {
+  "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/src/Components/mocks/fileMock.js",
+},
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
 
