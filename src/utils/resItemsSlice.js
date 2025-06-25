@@ -7,10 +7,15 @@ const resMenu = createSlice({
   },
   reducers: {
     addMenuItems: (state, action) => {
-    state.menuItems = action.payload;
-}
+      // Optional: ensure payload is an array before assigning
+      if (Array.isArray(action.payload)) {
+        state.menuItems = action.payload;
+      } else {
+        console.warn("addMenuItems expected an array but got:", action.payload);
+        state.menuItems = []; 
+      }
+    }
   }
 });
-
 export const { addMenuItems } = resMenu.actions;
 export default resMenu.reducer;

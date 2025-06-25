@@ -37,7 +37,7 @@ const Header = ({ showMenu, showAbout }) => {
           <img className="w-10 md:w-20 2xl:w-44" src={LOGO_IMAGE} alt="App Logo" />
         </div>
 
-        <ul className="flex gap-3 sm:gap-6 text-[9px] md:text-sm 2xl:text-4xl shadow-2xs">
+        <ul className="flex gap-3 sm:gap-6 text-[10px] md:text-sm 2xl:text-4xl shadow-2xs">
           <li className="cursor-pointer hover:font-semibold">
             <RouterLink to="/">Home</RouterLink>
           </li>
@@ -60,11 +60,11 @@ const Header = ({ showMenu, showAbout }) => {
           </li>
         </ul>
 
-        <div className="flex gap-2 md:gap-6 lg:gap-8 items-center text-[9px] md:text-sm 2xl:text-4xl cursor-pointer">
+        <div className="flex gap-2 md:gap-6 lg:gap-8 items-center text-[10px] md:text-sm 2xl:text-4xl cursor-pointer">
           <i onClick={() => setShowCart(!showCart)} className="fa-solid fa-cart-shopping text-[9px]  md:text-sm 2xl:text-4xl ">
             <span
             data-testid = "cart"
-             className="text-[8px] md:text-[12px] 2xl:text-3xl">-{cartItems.reduce((t, i) => t + i.quantity, 0)}</span>
+             className="text-[8px] md:text-[12px] 2xl:text-3xl">- {cartItems.reduce((t, i) => t + i.quantity, 0)}</span>
           </i>
           {user ? (
             <>
