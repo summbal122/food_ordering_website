@@ -1,4 +1,5 @@
 import IMG from "../../images/app_logo.png"
+import SIDEIMG from "../../images/sideImg.png"
 import { useState, } from "react";
 import { useNavigate } from "react-router";
 import { createUserWithEmailAndPassword , updateProfile} from "firebase/auth";
@@ -131,7 +132,7 @@ const handleSignUp = (e) => {
 
       <div className="hidden md:block w-[350px] lg:w-[450px] 2xl:w-5xl h-full">
         <img
-          src="https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846495.jpg?semt=ais_hybrid&w=740"
+          src={SIDEIMG}
           alt="Food visual"
           className="h-full w-full object-cover"
         />

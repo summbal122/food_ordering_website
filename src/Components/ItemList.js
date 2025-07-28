@@ -34,7 +34,7 @@ const ItemList = ({ items }) => {
             <div className="flex flex-col flex-grow">
               <div className="flex justify-between items-center">
                 <h3 className="font-semibold text-xs md:text-sm text-gray-800">{info.name}</h3>
-                <span className="text-xs text-red-400 font-semibold">$ {price} </span>
+                <span className="text-xs text-red-400 font-semibold">${price} </span>
               </div>
               <p className="text-[8px] md:text-xs text-gray-500 mt-1 line-clamp-2">
                 {info.description}

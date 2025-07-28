@@ -23,7 +23,6 @@ import "@testing-library/jest-dom";
   test ("Should load button inside contact componenet", () =>{
  render(<Contact/>);
  const placeholderText = screen.getByPlaceholderText("message");
-
  expect(placeholderText).toBeInTheDocument();
 
 });

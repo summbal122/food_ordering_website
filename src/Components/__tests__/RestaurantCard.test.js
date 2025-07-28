@@ -14,7 +14,6 @@ it ("should render restaurand card componenet with props data", ()=>{
       <BrowserRouter>
       <RestaurantCard resData = {MOCK_DATA} />
       </BrowserRouter>
-      
        </Provider>
 
 );

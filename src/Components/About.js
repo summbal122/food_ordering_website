@@ -1,5 +1,6 @@
-
-
+import ORDER from "../../images/order.png"
+import DELIVER from "../../images/deliver.png"
+import PREPARE from "../../images/prepare.png"
 const About = ()=>{
   return(
     <div id="about"> 
@@ -53,7 +54,7 @@ const About = ()=>{
           
               <div className="flex flex-col items-center gap-5">
                 <div className=" flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src="https://img.freepik.com/free-photo/people-taking-photos-food_23-2149303524.jpg" />
+                  <img className="rounded-md" src={ORDER} />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">You Select</h3>
@@ -64,7 +65,7 @@ const About = ()=>{
           
               <div className="flex flex-col items-center gap-8">
                 <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src="https://img.freepik.com/free-photo/people-cooking-enjoying-food_23-2149257390.jpg?semt=ais_hybrid&w=740&q=80"/>
+                  <img className="rounded-md" src={PREPARE}/>
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">We Prepare</h3>
@@ -75,7 +76,7 @@ const About = ()=>{
             
               <div className="flex flex-col items-center gap-8 ">
                 <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src="https://img.freepik.com/free-photo/food-delivery-boy-delivering-food-scooter_1303-27695.jpg?semt=ais_hybrid&w=740" />
+                  <img className="rounded-md" src={DELIVER} />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">Rider Delivers</h3>
