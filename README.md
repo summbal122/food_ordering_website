@@ -6,30 +6,29 @@ A responsive and modern food ordering app built with **React**, **Tailwind CSS**
 
 👉 [Click to View Live](https://food-ordering-app-cc5dc.web.app/)
 
-## 📸 Preview
+## Preview
 
-## 📸 App Screenshots
+## App Screenshots
 
-### 🏠 Home Page
-![alt text](![alt text](image.png))
+###  Home Page(![alt text](image.png))
 
-### 🔍 About Section
-![alt text](![alt text](image-1.png))
-![alt text](![alt text](image-2.png))
+###  About Section
+![alt text](image-1.png)
+![alt text](image-2.png)
 
-### 📋 Menu Section
-![alt text](![alt text](image-3.png))
-![alt text](![alt text](image-4.png))
-![alt text](![alt text](image-5.png))
+### Menu Section
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
 
-### 🛒 Checkout
-![alt text](![alt text](image-6.png))
-![alt text](![alt text](image-7.png))
-![alt text](![alt text](image-8.png))
+### Checkout
+![alt text](image-6.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
 
 ### Login/Signup
-![alt text](![alt text](image-9.png))
-![alt text](![alt text](image-10.png))
+![alt text](image-9.png)
+![alt text](image-10.png)
 
 ## 🚀 Features
 
@@ -39,7 +38,7 @@ A responsive and modern food ordering app built with **React**, **Tailwind CSS**
 - Redux for global state management
 - Unit testing with Jest and React Testing Library
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Frontend:** React.js, Tailwind CSS, React Router
 - **State Management:** Redux Toolkit
