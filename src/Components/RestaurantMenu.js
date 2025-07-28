@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { Shimmer } from "./Shimmer";
+import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
   const menuData = useSelector((store) => store.restaurantMenu.menu);
   const [showIndex, setShowIndex] = useState(null);
 
-  if (!menuData || Object.keys(menuData).length === 0) return <Shimmer />;
+if (!menuData || Object.keys(menuData).length === 0) return <RestaurantMenuShimmer />;
   const info = menuData?.cards?.find(
     (card) => card.card?.card?.info
   )?.card?.card?.info;
