@@ -28,8 +28,10 @@ const Body = () => {
     try {
       const data = await fetch(RES_LIST);
       const json = await data.json();
-      const resList =
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        const resList = json?.data?.cards.find(
+      (card) =>
+        card?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    )?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
       if (Array.isArray(resList)) {
         dispatch(addMenuItems(resList));
@@ -101,17 +103,21 @@ const Body = () => {
           </div>
         </div>
 
-        {!allRestaurants || allRestaurants.length === 0 ? (
-          <Shimmer />
-        ) : (
-          <div className="grid grid-cols-2 px-2 py-4 md:grid-cols-3 lg:grid-cols-4 w-10/12 2xl:grid-cols-7 gap-3 md:gap-8 2xl:gap-8 mt-8 md:mt-12 pb-10 lg:pb-20">
-            {filteredRestaurants.map((res) => (
-              <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-                <RestaurantCard resData={res} />
-              </Link>
-            ))}
-          </div>
-        )}
+              {!allRestaurants || allRestaurants.length === 0 ? (
+        <Shimmer />
+      ) : filteredRestaurants.length === 0 ? (
+        <p className="text-center text-gray-500 text-sm md:text-lg mt-10">
+          No restaurants found.
+        </p>
+      ) : (
+        <div className="grid grid-cols-2 px-2 py-4 md:grid-cols-3 lg:grid-cols-4 w-10/12 2xl:grid-cols-7 gap-3 md:gap-8 2xl:gap-8 mt-8 md:mt-12 pb-10 lg:pb-20">
+          {filteredRestaurants.map((res) => (
+            <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
+              <RestaurantCard resData={res} />
+            </Link>
+          ))}
+        </div>
+      )}
       </section>
     </div>
   );

@@ -28,7 +28,7 @@ it("should search restaurants with name Burger" , async () => {
   });
 
   const cardsBeforeSearch = screen.getAllByTestId("resCard");
-  expect(cardsBeforeSearch.length).toBe(8);
+  expect(cardsBeforeSearch.length).toBe(20);
 
   const searchButton = screen.getByRole("button", { name: "Search" });
   const searchInput = screen.getByTestId("searchInput");

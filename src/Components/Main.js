@@ -1,6 +1,4 @@
-import IMG_ONE from "../../images/food.jpg";
-import IMG_TWO from "../../images/food1.jpg";
-import IMG_THREE from "../../images/food2.jpg";
+
 import { Link as ScrollLink } from "react-scroll";
 const Main = () => {
   return (
@@ -20,15 +18,17 @@ const Main = () => {
               </ScrollLink>
             </button>
             <button className="border border-dark-background text-dark-background text-xs md:text-lg 2xl:text-2xl p-3 2xl:p-8 font-semibold lg:px-8 lg:py-3 rounded hover:bg-dark-background hover:text-white transition">
-              Visit Blog
+               <ScrollLink to="about" smooth={true} duration={600}>
+                About
+              </ScrollLink>
             </button>
           </div>
         </div>
         <div className="relative flex justify-center items-center">
           <div className="grid grid-cols-2 gap-4">
-            <img src={IMG_ONE} alt="Food 1" className="rounded-xl shadow-lg w-full h-40 object-cover" />
-            <img src={IMG_TWO} alt="Food 2" className="rounded-xl shadow-lg w-full h-40 object-cover" />
-            <img src={IMG_THREE} alt="Food 3" className="rounded-xl shadow-lg col-span-2 w-full h-40 object-cover" />
+             <img src="https://assets.childrens.com/m/4a4a6a61f912a1e1/original/shutterstock_369960455_800x480.jpg" alt="Food 1" className="rounded-xl shadow-lg w-full h-40 object-cover" />
+            <img src="https://img.freepik.com/premium-photo/indian-hindu-veg-thali-also-known-as-food-platter-is-complete-lunch-dinner-meal-closeup-selective-focus_466689-9144.jpg" alt="Food 2" className="rounded-xl shadow-lg w-full h-40 object-cover" />
+            <img src="https://img.freepik.com/free-photo/vivid-dishes-ravioli-pasta-arranged-row-wooden-table_23-2148246874.jpg" alt="Food 3" className="rounded-xl shadow-lg col-span-2 w-full h-50 object-cover" /> 
           </div>
         </div>
       </div>

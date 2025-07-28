@@ -19,14 +19,12 @@ const ItemList = ({ items }) => {
           <div
             data-testid="foodItems"
             key={info.id || index}
-            className="grid gap-4 p-3 md:p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white"
-          >
+            className="grid gap-4 p-2 md:p-4 rounded-xl shadow hover:shadow-lg transition duration-200 bg-white" >
             <div className="relative min-w-[96px] h-24 rounded overflow-hidden">
               <img
                 src={URL + info.imageId}
                 alt={info.name}
-                className="object-cover w-24 h-24 rounded"
-              />
+                className="object-cover w-24 h-24 rounded"  />
               <button
                 className="absolute bottom-1 right-1 bg-green-500 hover:bg-green-600 text-white text-xs md:text-sm px-2 py-1 rounded shadow-md"
                 onClick={() => handleAddItems(info)}

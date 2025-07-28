@@ -1,13 +1,11 @@
-import IMG_ONE from "../../images/food-order.jpg";
-import IMG_TWO from "../../images/food-preparing.jpg";
-import IMG_THREE from "../../images/food-delivered.jpg";
+
+
 const About = ()=>{
   return(
     <div id="about"> 
   <div className="w-full grid place-items-center gap-6 py-16 px-6 bg-">
   <div className="grid grid-cols-1 lg:grid-cols-2 w-full max-w-5xl gap-12 items-center">
     {/* Text Content */}
-   
     <div className="flex flex-col text-center items-center lg:items-start lg:text-left gap-5  md:gap-10">
       <h2 className="text-xl md:text-5xl font-bold text-gray-900 leading-snug">
         Fast, Fresh, and <br /> <span className="text-primary">Right on Time</span>
@@ -55,7 +53,7 @@ const About = ()=>{
           
               <div className="flex flex-col items-center gap-5">
                 <div className=" flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src={IMG_ONE} />
+                  <img className="rounded-md" src="https://img.freepik.com/free-photo/people-taking-photos-food_23-2149303524.jpg" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">You Select</h3>
@@ -66,7 +64,7 @@ const About = ()=>{
           
               <div className="flex flex-col items-center gap-8">
                 <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src={IMG_TWO} />
+                  <img className="rounded-md" src="https://img.freepik.com/free-photo/people-cooking-enjoying-food_23-2149257390.jpg?semt=ais_hybrid&w=740&q=80"/>
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">We Prepare</h3>
@@ -77,7 +75,7 @@ const About = ()=>{
             
               <div className="flex flex-col items-center gap-8 ">
                 <div className="flex items-center justify-center shadow-md hover:shadow-2xl cursor-pointer">
-                  <img className="rounded-md" src={IMG_THREE} />
+                  <img className="rounded-md" src="https://img.freepik.com/free-photo/food-delivery-boy-delivering-food-scooter_1303-27695.jpg?semt=ais_hybrid&w=740" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="text-md md:text-xl font-semibold text-dark-background">Rider Delivers</h3>

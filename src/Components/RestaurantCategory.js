@@ -5,7 +5,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
     <div>
       <div className="text-xl bg-gray-50 flex-col justify-between drop-shadow-md">
         <div
-          className="flex justify-between items-center p-4 gap-8 cursor-pointer"
+          className="flex justify-between items-center p-3 md:p-4 gap-8 cursor-pointer"
           onClick={setShowIndex}
         >
           <span className="font-semibold text-[10px] md:text-sm">
