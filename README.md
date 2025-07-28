@@ -10,7 +10,8 @@ A responsive and modern food ordering app built with **React**, **Tailwind CSS**
 
 ## App Screenshots
 
-###  Home Page(![alt text](image.png))
+###  Home Page
+![alt text](image.png)
 
 ###  About Section
 ![alt text](image-1.png)
